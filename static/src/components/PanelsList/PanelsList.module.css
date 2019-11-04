@@ -1,0 +1,28 @@
+.PanelsList {
+  background: var(--background);
+  display: flex;
+  justify-content: stretch;
+  align-items: stretch;
+}
+
+.Panels {
+  flex: 1;
+  width: calc(var(--panel-width) - 0.625rem);
+  min-width: calc(var(--min-panel-width) - 0.625rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  overflow-x: hidden;
+  overflow-y: auto;
+  --scrollbar-width: 2px;
+}
+
+.PanelsToggle {
+  height: 100%;
+  width: 0.625rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--title);
+}

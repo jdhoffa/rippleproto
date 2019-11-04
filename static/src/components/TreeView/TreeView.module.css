@@ -1,0 +1,58 @@
+.TreeView {
+  background: transparent;
+  overflow: hidden;
+  height: 100%;
+  overflow: auto;
+  --scrollbar-width: 0.625rem;
+  padding-bottom: 0.75rem;
+}
+
+.TreeView ul {
+  position: relative;
+}
+
+.TreeView ul::before {
+  content: " ";
+  position: absolute;
+  left: calc(0.125rem + 1px);
+  top: 0;
+  bottom: 0.75rem;
+  width: 1px;
+  background: var(--title);
+  display: block;
+}
+
+.TreeView li {
+  padding-left: 0.75rem;
+  list-style: none;
+  position: relative;
+}
+
+.TreeView li::before {
+  content: " ";
+  position: absolute;
+  left: calc(0.125rem + 1px);
+  top: 0.25rem;
+  width: 0.5rem;
+  display: block;
+  height: 0.5rem;
+  border-bottom: solid 1px var(--title);
+  border-radius: 0 0 0 100%;
+}
+
+.TreeView > li::before {
+  display: none;
+}
+
+.TreeView div * {
+  font-size: 0.75rem;
+  cursor: pointer;
+  user-select: none;
+  margin-left: 0.25rem;
+}
+
+.TreeView u,
+.TreeView svg {
+  margin: 0;
+  text-decoration: none;
+}

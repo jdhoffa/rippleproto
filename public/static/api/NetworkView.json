@@ -1,0 +1,16 @@
+{
+  "data": "Network 2",
+  "data_options": ["Network 1", "Network 2"],
+  "nLabel": "Column Name",
+  "nLabel_options": ["Group Name", "Column Name"],
+  "nColour": "levenshtein_dist",
+  "nColour_options": ["default", "levenshtein_dist", "other_dist"],
+  "nOpacity": "",
+  "nOpacity_options": ["", "Translucent", "Transparent"],
+  "nSize": "out_degree",
+  "nSize_options": ["in_degree", "out_degree"],
+  "lWidth": "weight",
+  "lWidth_options": ["default", "weight"],
+  "lOpacity": "",
+  "lOpacity_options": ["", "Translucent", "Transparent"]
+}

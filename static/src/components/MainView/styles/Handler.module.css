@@ -1,0 +1,14 @@
+.Handler {
+  width: 100%;
+  height: 100%;
+  background: var(--handler);
+  user-select: none;
+}
+
+:global(.handler-cols) {
+  cursor: w-resize;
+}
+
+:global(.handler-rows) {
+  cursor: n-resize;
+}

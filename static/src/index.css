@@ -1,0 +1,85 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  vertical-align: middle;
+  box-sizing: border-box;
+  transition: all 0.3s ease-in-out 0s, color 0s, fill 0s, outline 0s;
+}
+
+:root {
+  --handler: #232323;
+  --background: #2d2d2d;
+  --title: #373737;
+  --field: #464646;
+  --primary: #21817e;
+  --active: #707070;
+  --text: #b7b7b7;
+  --red: #d32f2f;
+  --desktop: 64em;
+  --tablet: 48em;
+  --mobile: 24em;
+  --panel-width: 15vw;
+  --min-panel-width: 15rem;
+}
+
+body {
+  font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  background: var(--field);
+  overflow: hidden;
+}
+
+.App {
+  display: flex;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+
+.delete-button {
+  border: solid 1px var(--red);
+  color: var(--red);
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-size: 0.75rem;
+  padding: 2px 0;
+  font-weight: normal;
+  user-select: none;
+  cursor: pointer;
+  margin-top: 5px;
+}
+
+::selection {
+  background: var(--title);
+  color: var(--text);
+}
+svg {
+  fill: currentColor;
+}
+
+.customScrollBar {
+  scrollbar-color: var(--active) var(--field);
+  scrollbar-width: thin;
+}
+
+.customScrollBar::-webkit-scrollbar-track,
+iframe body::-webkit-scrollbar-track {
+  box-shadow: 0;
+  background-color: var(--field);
+}
+
+.customScrollBar::-webkit-scrollbar,
+iframe body::-webkit-scrollbar {
+  width: var(--scrollbar-width, 0.625rem);
+  background-color: var(--field);
+}
+
+.customScrollBar::-webkit-scrollbar-thumb,
+iframe body::-webkit-scrollbar-thumb {
+  background: var(--active);
+}

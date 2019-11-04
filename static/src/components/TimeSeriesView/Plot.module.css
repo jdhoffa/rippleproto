@@ -1,0 +1,14 @@
+.Plot {
+  margin-bottom: 0.5rem;
+}
+
+.Plot h5 {
+  font-weight: bold;
+  font-size: 0.7rem;
+  padding-bottom: 0.125rem;
+}
+
+.PlotContent {
+  background: var(--field);
+  padding: 0.25rem;
+}

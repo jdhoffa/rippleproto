@@ -1,0 +1,7 @@
+.Sidebar {
+  color: var(--text);
+  height: 100vh;
+  display: flex;
+  align-items: stretch;
+  justify-content: stretch;
+}

@@ -1,0 +1,12 @@
+[
+  {
+    "id": 3,
+    "label": "Plot 1",
+    "content": ["Time Series 1", "Time Series 3"]
+  },
+  {
+    "id": 4,
+    "label": "Plot 2",
+    "content": ["Time Series 2"]
+  }
+]

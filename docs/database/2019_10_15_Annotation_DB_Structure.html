@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Database Structure for Annotation Platform</title>
+        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+        
+        <style>
+.task-list-item { list-style-type: none; } .task-list-item-checkbox { margin-left: -20px; vertical-align: middle; }
+</style>
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 16px;
+                line-height: 1.6;
+            }
+        </style>
+        
+        
+    </head>
+    <body class="vscode-light">
+        <h1 id="database-structure-for-annotation-platform">Database Structure for Annotation Platform</h1>
+<h2 id="introduction">Introduction</h2>
+<p>In this document, we lay out the structure of the database underlying the data visualisation and annotation platform.
+As base requirement, three different types of data together with the corresponding annotations need to be stored in the database:</p>
+<ul>
+<li>time-series (TS),</li>
+<li>networks (N),</li>
+<li>temporal networks (TN).</li>
+</ul>
+<p>Sets of data objects can be bundled into collections.
+Similarly, sets of collections can be bundled into collections.
+However, collections can not contain both data objects and collections at once.</p>
+<p>We chose to use SQLite for the database for the offered simplicity, portability, and general ease of use.</p>
+<h2 id="example">Example</h2>
+<p>As an example, we now assume we want to store a total of 4 data objects of types (TS, TS, N, TN).
+The first three objects (TS, TS, N) constitute <code>collection_1</code>, whereas (TN) is the only object in <code>collection_2</code>.
+Further, <code>collection_1</code> and <code>collection_2</code> form <code>collection_3</code>.</p>
+<h2 id="storing-collections">Storing collections</h2>
+<p>SQLite does not support an internal file structure.
+Therefore, the structure described above is encoded in the name of the individual tables.
+For this purpose, we employ standard file path notation.
+For example, the relation of <code>collection_2</code> being part of collection <code>collection_3</code> would be encoded as <code>collection_3/collection_2</code></p>
+<h2 id="storing-data">Storing data</h2>
+<p>Moreover, multiple tables are required to store all information on each data object.
+Corresponding tables can be matched using their names, as these names follow the convention <code>*TYPE*_*DATA*_*NAME*</code>.
+For data of type (TS), we require two tables for the time-series and annotations, respectively.</p>
+<ul>
+<li>
+<p>Time-series (<code>TS_S_*NAME*</code>)</p>
+<table>
+<thead>
+<tr>
+<th>value</th>
+<th>time</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>...</td>
+<td>...</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>Annotations (<code>TS_A_*NAME*</code>)</p>
+<table>
+<thead>
+<tr>
+<th>time_from</th>
+<th>time_to</th>
+<th>title</th>
+<th>text</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<p>For network objects (N), we require tables for nodes, edges, and annotations.
+Note that there can be any amount of <code>[properties]</code> stored in individual columns per property.
+Further note that both annotations to nodes and edges are stored in the annotations table.
+For nodes, the <code>target</code> is set to <code>None</code>.</p>
+<ul>
+<li>
+<p>Nodes (<code>N_N_*NAME*</code>)</p>
+<table>
+<thead>
+<tr>
+<th>node</th>
+<th>[properties]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>...</td>
+<td>...</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>Edges (<code>N_E_*NAME*</code>)</p>
+<table>
+<thead>
+<tr>
+<th>source</th>
+<th>target</th>
+<th>[properties]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>Annotations (<code>N_A_*NAME*</code>)</p>
+<table>
+<thead>
+<tr>
+<th>source</th>
+<th>target</th>
+<th>title</th>
+<th>text</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<p>Finally, for temporal network data (TN), also three tables for nodes, edges, and annotations are required.
+The difference to the standard network is only the consideration of <code>time_from</code> and <code>time_to</code> for all elements.</p>
+<ul>
+<li>
+<p>Nodes (<code>TN_N_*NAME*</code>)</p>
+<table>
+<thead>
+<tr>
+<th>node</th>
+<th>time_from</th>
+<th>time_to</th>
+<th>[properties]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>Edges (<code>TN_E_*NAME*</code>)</p>
+<table>
+<thead>
+<tr>
+<th>source</th>
+<th>target</th>
+<th>time_from</th>
+<th>time_to</th>
+<th>[properties]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>Annotations (<code>TN_A_*NAME*</code>)</p>
+<table>
+<thead>
+<tr>
+<th>source</th>
+<th>target</th>
+<th>time_from</th>
+<th>time_to</th>
+<th>title</th>
+<th>text</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<h2 id="resulting-structure">Resulting structure</h2>
+<p>Putting it all together, the following tables are required to store all information related to the data from the example.</p>
+<pre><code><div>collection_3/collection_1/TS_S_*NAME_1*
+collection_3/collection_1/TS_A_*NAME_1*
+
+collection_3/collection_1/TS_S_*NAME_2*
+collection_3/collection_1/TS_A_*NAME_2*
+
+collection_3/collection_1/N_N_*NAME_3*
+collection_3/collection_1/N_E_*NAME_3*
+collection_3/collection_1/N_A_*NAME_3*
+
+collection_3/collection_2/TN_N_*NAME_4*
+collection_3/collection_2/TN_E_*NAME_4*
+collection_3/collection_2/TN_A_*NAME_4*
+</div></code></pre>
+<p>The first part of the table name indicates the internal structure of the collections
+The last part indicates which data object the table refers to and which subset of the data it contains.</p>
+
+    </body>
+    </html>

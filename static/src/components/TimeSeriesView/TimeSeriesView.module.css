@@ -1,0 +1,14 @@
+.TimeSeriesView {
+  padding: 0.5rem;
+  position: relative;
+}
+
+.AddPlot {
+  font-weight: bold;
+  position: absolute;
+  top: 0.125rem;
+  right: 0.5rem;
+  font-size: 1.125rem;
+  user-select: none;
+  cursor: pointer;
+}

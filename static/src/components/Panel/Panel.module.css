@@ -1,0 +1,52 @@
+.Panel {
+  border-right: solid 1px var(--background);
+  border-left: solid 1px var(--background);
+  width: calc(var(--panel-width) - 0.625rem);
+  min-width: calc(var(--min-panel-width) - 0.625rem);
+}
+
+.PanelTitle {
+  background: var(--title);
+  user-select: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 2px 0;
+}
+
+.PanelTitle svg {
+  margin: 0 0.5rem;
+}
+
+.PanelTitle span {
+  min-width: 0;
+  flex: 1;
+}
+
+.PanelTitle span h5 {
+  font-size: 0.7rem;
+  line-height: 1rem;
+  font-weight: bold;
+}
+
+.PanelTitle span h6 {
+  font-size: 0.65rem;
+  line-height: 1rem;
+  font-weight: normal;
+}
+
+.IconActive {
+  fill: var(--primary);
+}
+
+.PanelContent {
+  height: auto;
+  width: 100%;
+  overflow: hidden;
+  transition: all 0s;
+}
+
+.PanelContent:empty {
+  height: 3.125rem;
+}

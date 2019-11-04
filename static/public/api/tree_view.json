@@ -1,0 +1,281 @@
+[
+  {
+    "label": "Project A",
+    "open": true,
+    "id": 1,
+    "content": [
+      {
+        "label": "Team I",
+        "open": true,
+        "id": 2,
+        "content": [
+          {
+            "label": "Aggregation i",
+            "open": true,
+            "id": 3,
+            "content": [
+              {
+                "label": "Time Series 1",
+                "open": true,
+                "id": 4,
+                "content": [{ "label": "Annotation a", "id": 100 }]
+              },
+              {
+                "label": "Time Series 2",
+                "open": false,
+                "id": 5,
+                "content": [{ "label": "Annotation b", "id": 101 }]
+              },
+              {
+                "label": "Network 1",
+                "open": true,
+                "id": 6,
+                "content": [{ "label": "Annotation c", "id": 102 }]
+              },
+              {
+                "label": "Network 2",
+                "open": false,
+                "id": 7,
+                "content": [{ "label": "Annotation d", "id": 103 }]
+              },
+              { "label": "Annotation c", "id": 104 }
+            ]
+          },
+          { "label": "Annotation g", "id": 201 }
+        ]
+      },
+      {
+        "label": "Team II",
+        "open": false,
+        "id": 8,
+        "content": [
+          {
+            "label": "Aggregation i",
+            "open": false,
+            "id": 9,
+            "content": [
+              {
+                "label": "Time Series 1",
+                "open": false,
+                "id": 10,
+                "content": [{ "label": "Annotation a", "id": 105 }]
+              },
+              {
+                "label": "Time Series 2",
+                "open": true,
+                "id": 11,
+                "content": [{ "label": "Annotation b", "id": 106 }]
+              },
+              {
+                "label": "Network 1",
+                "open": false,
+                "id": 12,
+                "content": [{ "label": "Annotation c", "id": 107 }]
+              },
+              {
+                "label": "Network 2",
+                "open": true,
+                "id": 13,
+                "content": [{ "label": "Annotation d", "id": 108 }]
+              },
+              { "label": "Annotation c", "id": 109 }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "Team III",
+        "open": false,
+        "id": 14,
+        "content": [
+          {
+            "label": "Aggregation i",
+            "open": false,
+            "id": 15,
+            "content": [
+              {
+                "label": "Time Series 1",
+                "open": false,
+                "id": 16,
+                "content": [{ "label": "Annotation a", "id": 110 }]
+              },
+              {
+                "label": "Time Series 2",
+                "open": false,
+                "id": 17,
+                "content": [{ "label": "Annotation b", "id": 111 }]
+              },
+              {
+                "label": "Network 1",
+                "open": false,
+                "id": 18,
+                "content": [{ "label": "Annotation c", "id": 112 }]
+              },
+              {
+                "label": "Network 2",
+                "open": false,
+                "id": 19,
+                "content": [{ "label": "Annotation d", "id": 113 }]
+              },
+              { "label": "Annotation c", "id": 114 }
+            ]
+          },
+          {
+            "label": "Aggregation ii",
+            "open": false,
+            "id": 20,
+            "content": [
+              {
+                "label": "Time Series 1",
+                "open": false,
+                "id": 22,
+                "content": [{ "label": "Annotation a", "id": 115 }]
+              },
+              {
+                "label": "Time Series 2",
+                "open": false,
+                "id": 23,
+                "content": [{ "label": "Annotation b", "id": 116 }]
+              },
+              {
+                "label": "Network 1",
+                "open": false,
+                "id": 24,
+                "content": [{ "label": "Annotation c", "id": 117 }]
+              },
+              {
+                "label": "Network 2",
+                "open": false,
+                "id": 25,
+                "content": [{ "label": "Annotation d", "id": 118 }]
+              },
+              { "label": "Annotation c", "id": 119 }
+            ]
+          },
+          { "label": "Annotation l", "id": 203 }
+        ]
+      },
+      { "label": "Annotation e", "id": 120 }
+    ]
+  },
+  {
+    "label": "Project B",
+    "open": true,
+    "id": 26,
+    "content": [
+      {
+        "label": "Team IV",
+        "open": true,
+        "id": 27,
+        "content": [
+          {
+            "label": "Aggregation iii",
+            "open": true,
+            "id": 28,
+            "content": [
+              {
+                "label": "Time Series 1",
+                "open": true,
+                "id": 29,
+                "content": [{ "label": "Annotation a", "id": 121 }]
+              },
+              {
+                "label": "Time Series 2",
+                "open": true,
+                "id": 30,
+                "content": [{ "label": "Annotation b", "id": 122 }]
+              },
+              {
+                "label": "Network 1",
+                "open": true,
+                "id": 31,
+                "content": [{ "label": "Annotation c", "id": 123 }]
+              },
+              {
+                "label": "Network 2",
+                "open": true,
+                "id": 32,
+                "content": [{ "label": "Annotation d", "id": 124 }]
+              },
+              { "label": "Annotation c", "id": 125 }
+            ]
+          },
+          {
+            "label": "Aggregation iv",
+            "open": true,
+            "id": 33,
+            "content": [
+              {
+                "label": "Time Series 1",
+                "open": true,
+                "id": 34,
+                "content": [{ "label": "Annotation a", "id": 126 }]
+              },
+              {
+                "label": "Time Series 2",
+                "open": true,
+                "id": 35,
+                "content": [{ "label": "Annotation b", "id": 127 }]
+              },
+              {
+                "label": "Network 1",
+                "open": true,
+                "id": 36,
+                "content": [{ "label": "Annotation c", "id": 128 }]
+              },
+              {
+                "label": "Network 2",
+                "open": true,
+                "id": 37,
+                "content": [{ "label": "Annotation d", "id": 129 }]
+              },
+              { "label": "Annotation c", "id": 130 }
+            ]
+          },
+          { "label": "Annotation y", "id": 202 }
+        ]
+      },
+      {
+        "label": "Team V",
+        "open": false,
+        "id": 38,
+        "content": [
+          {
+            "label": "Aggregation v",
+            "open": false,
+            "id": 39,
+            "content": [
+              {
+                "label": "Time Series 1",
+                "open": false,
+                "id": 40,
+                "content": [{ "label": "Annotation a", "id": 131 }]
+              },
+              {
+                "label": "Time Series 2",
+                "open": false,
+                "id": 41,
+                "content": [{ "label": "Annotation b", "id": 132 }]
+              },
+              {
+                "label": "Network 1",
+                "open": false,
+                "id": 42,
+                "content": [{ "label": "Annotation c", "id": 133 }]
+              },
+              {
+                "label": "Network 2",
+                "open": false,
+                "id": 43,
+                "content": [{ "label": "Annotation d", "id": 134 }]
+              },
+              { "label": "Annotation c", "id": 135 }
+            ]
+          },
+          { "label": "Annotation n", "id": 204 }
+        ]
+      },
+      { "label": "Annotation i", "id": 136 }
+    ]
+  }
+]

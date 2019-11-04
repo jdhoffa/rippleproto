@@ -1,0 +1,3 @@
+[id^="com_"] {
+    display: none !important;
+}

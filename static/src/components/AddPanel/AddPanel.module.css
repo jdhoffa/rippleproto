@@ -1,0 +1,10 @@
+.AddPanel {
+  background: var(--title);
+  user-select: none;
+  cursor: pointer;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.25rem;
+  line-height: 1.25rem;
+  border: solid 1px var(--background);
+}
